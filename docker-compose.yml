@@ -1,0 +1,17 @@
+services:
+  cassandra:
+    image: 'cassandra:5.0'
+    container_name: cassandra
+    ports:
+      - 7000:7000
+      - 9042:9042
+      - 9142:9142
+    environment:
+      - CASSANDRA_SEED=cassandra
+    volumes:
+      - ./data/cassandra:/var/lib/cassandra
+    networks:
+      - cc6240
+
+networks:
+  cc6240:
